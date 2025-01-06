@@ -64,7 +64,12 @@ alias lst='eza --long --all --no-permissions --no-filesize --no-user --git --sor
 alias fzfp='fzf --preview \"bat --style numbers --color always {}\"'
 alias cat='bat --paging never --theme DarkNeon --style plain'
 alias k='kubecolor'
+alias ..='cd ..'
 
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export KUBE_EDITOR=vim
+export GIT_EDITOR=vim
+
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
