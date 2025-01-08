@@ -69,7 +69,10 @@ alias ..='cd ..'
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+# code command
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export KUBE_EDITOR=vim
 export GIT_EDITOR=vim
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
