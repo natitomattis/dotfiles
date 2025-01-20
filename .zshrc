@@ -75,7 +75,7 @@ export KUBE_EDITOR=vim
 export GIT_EDITOR=vim
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 
-export GOROOT=/usr/local/go
+export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
