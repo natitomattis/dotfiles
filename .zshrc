@@ -1,17 +1,18 @@
 autoload -Uz compinit
 compinit
 
+export PATH=$PATH:/opt/homebrew/bin
 setopt HIST_IGNORE_ALL_DUPS
 
 # Devbox
-DEVBOX_NO_PROMPT=true
-eval "$(devbox global shellenv --init-hook)"
+# DEVBOX_NO_PROMPT=true
+# eval "$(devbox global shellenv --init-hook)"
 
 # Git
 LANG=en_US.UTF-8
 
 # Completions
-source <(devbox completion zsh)
+# source <(devbox completion zsh)
 source <(docker completion zsh)
 source <(kubectl completion zsh)
 
@@ -22,7 +23,7 @@ eval "$(starship init zsh)"
 # eval $(thefuck --alias)
 
 # Zoxide
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
 
 # kubecolor
 compdef kubecolor=kubectl
@@ -56,13 +57,18 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-zstyle ':completion:*' menu yes select
+
+# Word movement with Option+Left/Right
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
+
+# zstyle ':completion:*' menu yes select
 
 # Aliases
-alias ls='eza --long --all --no-permissions --no-filesize --no-user --no-time --git'
-alias lst='eza --long --all --no-permissions --no-filesize --no-user --git --sort modified'
-alias fzfp='fzf --preview \"bat --style numbers --color always {}\"'
-alias cat='bat --paging never --theme DarkNeon --style plain'
+# alias ls='eza --long --all --no-permissions --no-filesize --no-user --no-time --git'
+# alias lst='eza --long --all --no-permissions --no-filesize --no-user --git --sort modified'
+# alias fzfp='fzf --preview \"bat --style numbers --color always {}\"'
+# alias cat='bat --paging never --theme DarkNeon --style plain'
 alias k='kubecolor'
 alias ..='cd ..'
 
